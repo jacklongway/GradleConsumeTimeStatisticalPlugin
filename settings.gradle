@@ -1,1 +1,1 @@
-include ':app', ':tasktimeplugin'
+include ':app', ':tasktimeplugin', ':pluginext'

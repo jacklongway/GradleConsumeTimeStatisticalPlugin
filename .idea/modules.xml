@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/TaskTime.iml" filepath="$PROJECT_DIR$/TaskTime.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pluginext/pluginext.iml" filepath="$PROJECT_DIR$/pluginext/pluginext.iml" />
       <module fileurl="file://$PROJECT_DIR$/tasktimeplugin/tasktimeplugin.iml" filepath="$PROJECT_DIR$/tasktimeplugin/tasktimeplugin.iml" />
     </modules>
   </component>

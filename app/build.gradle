@@ -1,5 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'plugin.test'
+apply plugin: 'com.pluginext'
 
 android {
     compileSdkVersion 24
@@ -20,6 +21,10 @@ android {
     }
 
 }
+pluginExt{
+    params1 = 'test1'
+    params2 = 'test2'
+}
 
 buildscript{
     repositories{
@@ -29,6 +34,7 @@ buildscript{
     }
     dependencies{
         classpath 'cn.longway.time.plugin:tasktimeplugin:1.0.0'
+        classpath 'cn.longway.pluginext:pluginext:1.0.0'
     }
 }
 
