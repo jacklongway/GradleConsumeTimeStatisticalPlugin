@@ -1,0 +1,19 @@
+apply plugin: 'groovy'
+//apply plugin: 'maven'
+apply from: './gradle-maven-publish.gradle'
+
+dependencies {
+    compile gradleApi()
+    compile localGroovy()
+}
+
+//group = 'cn.longway.time.plugin'
+//version = '1.0.0'
+
+//uploadArchives {
+//    repositories {
+//        mavenDeployer {
+//            repository(url: uri('../repo'))
+//        }
+//    }
+//}
