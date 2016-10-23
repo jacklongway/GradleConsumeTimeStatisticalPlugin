@@ -21,20 +21,26 @@ android {
     }
 
 }
-pluginExt{
+pluginExt {
     params1 = 'test1'
     params2 = 'test2'
+    nestExt{
+        nest1 = "nest1"
+        nest2 = "nest2"
+    }
 }
 
-buildscript{
-    repositories{
+
+buildscript {
+    repositories {
+        jcenter()
         maven {
             url uri('../repo')
+        }
     }
-    }
-    dependencies{
+    dependencies {
         classpath 'cn.longway.time.plugin:tasktimeplugin:1.0.0'
-        classpath 'cn.longway.pluginext:pluginext:1.0.0'
+        classpath 'cn.longway.pluginext:pluginext:1.0.1'
     }
 }
 

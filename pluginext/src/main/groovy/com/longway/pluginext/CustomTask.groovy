@@ -12,5 +12,7 @@ public class CustomTask extends DefaultTask {
     public void out() {
         println("params1 is ${project.pluginExt.params1}")
         println("params2 is ${project.pluginExt.params2}")
+        println("nest1 is ${project.pluginExt.nestExt.nest1}")
+        println("nest2 is ${project.pluginExt.nestExt.nest2}")
     }
 }

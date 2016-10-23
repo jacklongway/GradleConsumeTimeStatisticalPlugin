@@ -31,7 +31,7 @@ install {
     repositories.mavenInstaller {
         pom {
             project {
-                packaging 'aar'
+                packaging 'jar'
                 name properties.getProperty("NAME", "") // 组名
                 url siteUrl
                 licenses {
@@ -57,7 +57,16 @@ install {
         }
     }
 }
+task sourcesJar(type: Jar) {
+    from sourceSets.main.allGroovy
+    classifier = 'sources'
+}
 
+
+task javadocJar(type: Jar, dependsOn: groovydoc) {
+    from groovydoc.destinationDir
+    classifier = 'javadoc'
+}
 //task sourcesJar(type: Jar) {
 //    from android.sourceSets.main.groovy.srcDirs
 //    classifier = 'sources'
@@ -67,23 +76,23 @@ install {
 //    source = android.sourceSets.main.groovy.srcDirs
 //    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
 //}
-//javadoc {
-//    options {
-//        encoding "UTF-8"
-//        charSet 'UTF-8'
-//        author true
-//        version true
-//        links "http://docs.oracle.com/javase/7/docs/api"
-//    }
-//}
+javadoc {
+    options {
+        encoding "UTF-8"
+        charSet 'UTF-8'
+        author true
+        version true
+        links "http://docs.oracle.com/javase/7/docs/api"
+    }
+}
 //task javadocJar(type: Jar, dependsOn: javadoc) {
 //    classifier = 'javadoc'
 //    from javadoc.destinationDir
 //}
-//artifacts {
-//    archives javadocJar
-//    archives sourcesJar
-//}
+artifacts {
+    archives javadocJar
+    archives sourcesJar
+}
 
 task findConventions << {
     println project.getConvention()
